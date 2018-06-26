@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+ 
+img{
+    display: block;
+    width: 100%;
+}
+
+body{
+    font-family: 'Noto Sans TC', '微軟正黑體',sans-serif !important;   
+    background-color: #eae9ee; 
+}
+
+body[page=exchange]{
+    .top{
+        position: relative;
+        width: 100vw;
+        background-color: #acb1bf;
+        .inner{
+            .top_bg{
+                top: 0;
+                width: 100vw;
+            }
+            .logo{
+                position: absolute;
+                width: 40%;
+                top: -1vw;
+                left: -1vw;
+            }      
+        }// inner
+    }//top
+
+    .bottom{
+        .inner{
+            position: relative;
+
+            >img{
+                width: 100%;
+            }
+
+            ul{
+                position: absolute;
+                top: 7%;
+                left: 25%;
+                width: 70%;
+                height: 346/626*100%;
+                li{
+                    font-size: 3.5vw;
+                    height: 64/346*100%;
+                    line-height: 64/346*100%;
+                    margin-bottom: 0.8%;
+                    span{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 1.5;
+                        vertical-align: top;
+                    }
+
+                    &:last-child{
+                        font-size: 3vw;
+                        height: 55/346*100%;
+                        line-height: 55/346*100%;
+                        span{
+                            box-sizing: border-box;
+                            padding-left: 5.5%;
+                            
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                background: url('../img/bio30th/icon_location.png')center center no-repeat;
+                                background-size: 100%;
+                                left: 0;
+                                width: 3vw;
+                                height: 5vw;
+                            }
+                        }
+                    }
+                }//li
+            }//ul
+
+            .exchange_btn{
+                position: absolute;
+                width: 855/1080*100%;
+                bottom: 15%;
+                left: 10%;
+            }
+        }//inner
+    }//bottom
+}//page = exchange
+
+body[page=expired]{
+    .top{
+        position: relative;
+        width: 100vw;
+        background-color: #acb1bf;
+        .inner{
+            .top_bg{
+                top: 0;
+                width: 100vw;
+            }
+            .logo{
+                position: absolute;
+                width: 40%;
+                top: -1vw;
+                left: -1vw;
+            }      
+        }// inner
+    }//top
+
+    .bottom{
+        .inner{
+            position: relative;
+
+            >img{
+                width: 100%;
+            }
+
+            .req_btn{
+                position: absolute;
+                width: 304/1080*100%;
+                bottom: 32%;
+                left: 36%;
+            }
+        }//inner
+    }//bottom
+}
+
+
+
+

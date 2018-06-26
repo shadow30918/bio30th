@@ -1,0 +1,1368 @@
+$pc-s:1081px;
+$pc-m:1200px;
+$pc-l:1900px;
+
+$pc-s-inner:900px;
+$pc-l-inner:1500px;
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+//pc-s
+ @mixin pc-s() {
+  @media all and (min-width: $pc-s) {
+               @content;
+         }
+    }
+//pc-m
+ @mixin pc-m() {
+@media all and (min-width:$pc-m) {
+                @content;
+          }
+}
+//pc-l
+ @mixin pc-l() {
+        @media all and (min-width: $pc-l) {
+                @content;
+          }
+ }
+ 
+ 
+img{
+    display: block;
+    width: 100%;
+}
+
+body{
+    font-family: 'Noto Sans TC', '微軟正黑體',sans-serif !important;
+    [data-aos=fade-left]{
+        -webkit-transform: translate(30px);
+                transform: translate(30px);
+    }
+    [data-aos=fade-right]{
+        -webkit-transform: translate(-30px);
+                transform: translate(-30px);
+    }
+    [data-aos=fade-down]{
+        -webkit-transform: translateY(-100px);
+                transform: translateY(-100px);
+    }
+    [data-aos=fade-up]{
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px);
+    }
+    
+}
+
+body[data-aos-delay='3000'] [data-aos], [data-aos][data-aos][data-aos-delay='3000']{
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+  } 
+  [data-aos][data-aos][data-aos-delay='3000'].aos-animate, body[data-aos-delay='3000'] [data-aos].aos-animate{
+    -webkit-transition-delay: 3s;
+            transition-delay: 3s;
+  }
+body[data-aos-delay='4000'] [data-aos], [data-aos][data-aos][data-aos-delay='4000']{
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+  }
+  [data-aos][data-aos][data-aos-delay='4000'].aos-animate, body[data-aos-delay='4000'] [data-aos].aos-animate{
+    -webkit-transition-delay: 4s;
+            transition-delay: 4s;
+  }
+body[data-aos-delay='5000'] [data-aos], [data-aos][data-aos][data-aos-delay='5000']{
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+}
+[data-aos][data-aos][data-aos-delay='5000'].aos-animate, body[data-aos-delay='5000'] [data-aos].aos-animate{
+    -webkit-transition-delay: 5s;
+            transition-delay: 5s;   
+}
+body[data-aos-delay='6000'] [data-aos], [data-aos][data-aos][data-aos-delay='6000']{
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+  }
+  [data-aos][data-aos][data-aos-delay='6000'].aos-animate, body[data-aos-delay='6000'] [data-aos].aos-animate{
+    -webkit-transition-delay: 6s;
+            transition-delay: 6s;
+  }
+body[data-aos-delay='7000'] [data-aos], [data-aos][data-aos][data-aos-delay='7000']{
+-webkit-transition-delay: 0s;
+        transition-delay: 0s;
+}
+[data-aos][data-aos][data-aos-delay='7000'].aos-animate, body[data-aos-delay='7000'] [data-aos].aos-animate{
+    -webkit-transition-delay: 7s;
+        transition-delay: 7s;
+}
+
+.inner{
+    @include pc-s{
+        
+        width: $pc-s-inner;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    @include pc-l{
+        
+        width: $pc-l-inner;
+    }
+
+}
+.logo{
+    .inner{
+        position: relative;
+        //min-height: 60px;
+        @include pc-s{
+            position: fixed;
+            min-height: 60px;
+            z-index: 999;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+        }
+        img{
+            position: absolute;
+            width: 40%;
+            top: -1vw;
+            left: -1vw;
+            z-index: 99;
+            @include pc-s{                
+                width: 20%;
+                left: 0;
+                top: 0;
+            } 
+        }
+    }
+    
+}
+.menu_ham{
+    position: fixed;
+    width: 9%;
+    right: 5vw;
+    top: 5vw;
+    z-index: 999;
+    @include pc-s{
+        display: none;
+    }
+}
+.menuWrap{
+    position: fixed;
+    background-color: #FFF;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: none;
+    .inner{
+        width: 100%;
+        height: 100%;
+    }
+    @include pc-s{
+        display: block;
+        width: 100%;
+        height: 60px;
+        -webkit-box-shadow: 0px 0px 7px #aaa;
+                box-shadow: 0px 0px 7px #aaa;
+        .inner{
+            width: $pc-s-inner;
+            position: relative;
+        }
+    }
+    @include pc-l{
+        height: 100px;
+        .inner{
+            width: $pc-l-inner;
+        }
+    }
+    .close{
+        position: absolute;
+        right: 5vw;
+        top: 5vw;
+        width: 9%;
+        @include pc-s{
+            display: none;
+        }
+    }
+    .menu{
+        position: relative;
+        width: 60%;
+        margin: 0 auto;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        z-index: 9999;
+        @include pc-s{
+            width: auto;
+            text-align: center;
+        }
+        li{
+            display: block;
+            margin-top: 3.8%;
+            @include pc-s{
+                display: inline-block;
+                cursor: pointer;
+                width: 144px;
+                margin: 0;
+                position: relative;
+            }
+            @include pc-l{
+                width: 240px;
+            }
+            .submenu{
+                display: none;
+                width: 100%;
+                z-index: 99;
+                @include pc-s{
+                    position: absolute;
+                    width: 222px;
+                    background: url('../img/submenu_bg.png')center top no-repeat;
+                    background-size: 100%;
+                    padding: 12.6px 0 0;
+                    top: 50px;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%);
+                            transform: translateX(-50%);
+                }
+                @include pc-l{
+                    width: 370px;
+                    padding: 21px 0 0;
+                    top: 80px;
+                }
+                li{
+                    display: block;
+                    margin-top: 5.5%;
+                    @include pc-s{
+                        margin: 0;
+                        width: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &.active .submenu{
+                display: block;
+            }
+            @include pc-s{
+                &:hover .submenu{
+                    display: block;
+                }
+            }
+        }
+    }//menu
+    .logo{
+        display: none;
+        @include pc-s{
+            display: block;
+            position: absolute;
+            width: 20%;
+            top: 0;
+        }
+    }
+}
+
+
+.top{
+    position: relative;
+    width: 100vw;
+    background-color: #fffff9;
+    overflow: hidden;
+    @include pc-s{
+        width: 100%;
+    }
+    .inner{
+        .main{
+            height: 860/1080*100vw;
+            @include pc-s{
+                height: 100vh;
+            }
+
+            >*{
+                position: absolute;
+            }
+            .top_bg{
+                top: 0;
+                width: 100vw;
+                left: 50%;
+                transform: translateX(-50%);
+
+                @include pc-s {
+                    width: 2560/980*90vh;
+                    //width: $pc-s-inner*2560/1500;
+                    top: 60px;
+                }
+                @include pc-l {
+                    //width: $pc-l-inner*2560/1500;
+                    top: 100px;
+                }
+            }
+            .logo{
+                width: 40%;
+                top: -1vw;
+                left: -1vw;
+                @include pc-s{
+                    display: none;
+                }
+            }
+            .title{
+                width: 376/1080*100vw;
+                top: 4%;
+                right: 3%;
+                @include pc-s{
+                    width: 500/1500*100%;
+                    top: 6%;
+                    right: -6%;
+                }
+            }
+        }//main
+
+        .SP{
+            position: relative;
+            z-index: 10;
+            font-size: 0;
+            height: 2420/1080*100vw;
+            @include pc-s {
+                height: $pc-s-inner*740/1500;
+            }
+            @include pc-l {
+                height: $pc-l-inner*740/1500;
+            }
+
+            .story{
+                vertical-align: top;
+                @include pc-s{
+                    display: inline-block;
+                    margin-left: 90/1500*100%;
+                    width: 600/1500*100%;
+                }
+                .date{
+                    @include pc-s{
+                        width: 180/600*100%;
+                    }
+                }
+            }
+
+            .prize{
+                position: relative;
+                display: block;
+                vertical-align: top;
+                @include pc-s{
+                    display: inline-block;
+                    margin-left: 150/1500*100%;
+                    width: 660/1500*100%;
+                }
+                .pic{
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    @include pc-s{
+                        width: 720/660*100%;
+                        top: -30/630*100%;
+                        right: 0;
+                    }
+                }
+                .title{
+                    position: relative;
+                    padding-top: 400/1080*100vw;
+                    @include pc-s {
+                        padding: 0;
+                        margin-top: 230/660*100%;
+                    }
+                }
+            }
+        }
+        
+    }// inner
+}//top
+
+.yt{
+    //margin-bottom: 6.48%;
+    .inner{
+        @include pc-s{
+            width: 100%;
+        }
+        .yt_bg{
+            position: relative;
+            width: 100%;
+            height: 100vw;
+            background: url('../img/yt_bg.png')top center no-repeat;
+            background-size: 100%;
+            @include pc-s{
+                height: 648px;
+                background-size: cover;
+            }
+            @include pc-l{
+                height: 1080px;
+            }
+
+            .bgV {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                video{   
+                    min-height: 648px;  
+                    position: relative;
+                    top:50%;
+                    -webkit-transform: translateY(-40%);
+                            transform: translateY(-40%);
+                    @include pc-l {
+                        width: 110%;
+                        -webkit-transform: translateY(-50%);
+                                transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+        .mask{
+            position: absolute;
+            top: 0;
+            width: 100vw;
+            height: 100vw;
+            background-color: rgba(0,0,0,0.5);
+            @include pc-s{
+                width: 100%;
+                height: 648px;
+            }
+            @include pc-l{
+                height: 1080px;
+            }
+        }
+        .word{
+            position: absolute;
+            top: 27vw;
+            @include pc-s{
+                top: 27%;
+                width: $pc-s-inner;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                        transform: translateX(-50%);
+            }
+            @include pc-l{
+                width: $pc-l-inner;
+            }
+        }
+        .play{
+            position: absolute;
+            width: 14.35%;
+            top: 55vw;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+            @include pc-s{                
+                width: 93px;
+                top: 55%;
+                -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+                        box-shadow: 5px 5px 10px rgba(0,0,0,0.3); 
+                border-radius: 99em;    
+                -webkit-transition: all 0.5s ease;    
+                transition: all 0.5s ease;
+                -webkit-transform:translate(-50%,-20%);
+                        transform:translate(-50%,-20%);
+                &:hover{
+                    width: 97px;
+                    -webkit-filter: contrast(0.2) brightness(1.8);
+                            filter: contrast(0.2) brightness(1.8);
+                }
+            }
+            @include pc-l{
+                width: 155px;
+                &:hover{
+                    width: 160px;
+                }
+            }
+        }
+    }
+    .yt_popup {
+        display: none;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        iframe{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+            width: 90vw;
+            height: 50.625vw;
+            @include pc-s {
+                width: 80vw;
+                height: 45vw;
+            }
+        }
+    }
+}//yt
+
+.bg{
+    background: url('../img/bio30th/bg.png')center bottom no-repeat;
+    background-size: cover; 
+    overflow: hidden;
+    @include pc-s{
+        background: url('../img/bio30th/bg-dt.png')center bottom no-repeat;
+        background-size: cover;
+        //padding-top: 3%;
+    }
+    
+    .blog{
+        .inner{
+            position: relative;
+            height: 1360/1080*100vw;
+            @include pc-s {
+                height: 1320/1500*$pc-s-inner;
+            }
+            @include pc-l {
+                height: 1320/1500*$pc-l-inner;
+            }
+
+            .title{
+                @include pc-s{
+                    position: absolute;
+                    width: 314/1500*100%;
+                    top: 14%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .bloger_slider{
+                width: 100vw;
+                margin: 0 auto;
+                i{
+                    position: absolute;
+                    z-index: 99;
+                    font-size: 10vw;
+                    font-weight: 800;
+                    top: 50%;
+                    &.next{
+                        right: 0;
+                    }
+                }
+                .group{
+                    position: relative;
+                    outline: none;
+                    width: 759/1080*100vw;
+                    .name1,.name2,.name3{
+                        position: absolute;
+                        
+                    }
+                    .name1{
+                        width: 435/1080*100vw;
+                        top: 30/1080*100vw;
+                        left: 140/1080*100vw;
+                    }
+                    .name2{
+                        width: 376/1080*100vw;
+                        bottom: 108/1080*100vw;
+                        right: 120/1080*100vw;
+                    }
+                    .name3{
+                        width: 374/1080*100vw;
+                        top: 35/1080*100vw;
+                        right: 120/1080*100vw;
+                    }
+                    @include pc-s{
+                        position: absolute;
+                        width: 465/1500*100%;
+                        &.g1{
+                            top: 150/1320*100%;
+                            left: 30/1500*100%;
+                        }
+                        &.g2{
+                            top: 353/1320*100%;
+                            left: 516/1500*100%;
+                        }
+                        &.g3{
+                            top: 150/1320*100%;
+                            left: 1000/1500*100%;
+                        }
+    
+                        .name1{
+                            position: absolute;
+                            width: 379/465*100%;
+                            top: 30/901*100%;
+                            left: -30/465*100%;
+                        }
+                        .name2{
+                            position: absolute;
+                            width: 323/465*100%;
+                            bottom: 55/901*100%;
+                            right: -30/465*100%;
+                        }
+                        .name3{
+                            position: absolute;
+                            width: 324/465*100%;
+                            top: 30/901*100%;
+                            right: -30/465*100%;
+                        }
+                    }//include pc-s
+                    
+                }//group
+            }//bloger_slider
+        }
+    }
+}//bg
+
+.trial{
+    .inner{
+        transition: height 1s ease-out;
+
+        .choose{
+            //display: none;
+            ul.shop_select{
+                position: relative;
+                box-sizing: border-box;
+                font-size: 0;
+                padding: 2% 63/1080*100vw 0;
+                height: 230/1080*100vw;
+
+                @include pc-s{
+                    background: url('../img/bio30th/form_choose_bg.png')center center no-repeat;
+                    background-size: 100%;
+                    padding: 3% 200/1500*100%;
+                    height: 170/1500*$pc-s-inner;
+                }
+                @include pc-l{
+                    height: 170/1500*$pc-l-inner;
+                }
+
+                li{
+                    position: relative;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    border: 2px solid #e4d2bd;
+                    background-color: #fff;
+                    cursor: pointer;
+                    height: 78/1080*100vw;
+                    width: 465/1080*100vw;
+
+                    &:nth-child(2){
+                        margin-right: 24/1080*100vw;
+                    }
+                    
+                    @include pc-s{
+                        height: 76/1500*$pc-s-inner;
+                        width: 360/1100*100% !important;
+                        &:first-child,&:nth-child(2){
+                            margin-right: 10/1100*100%;
+                        }
+                    }
+                    @include pc-l{
+                        height: 76/1500*$pc-l-inner;
+                        font-size: 36px;
+                    }
+
+                    
+                   
+                    >*{
+                        font-family: 'Noto Sans TC', '微軟正黑體',sans-serif !important;
+                        height: 100%;
+                        line-height: 100%;
+                        width: 100%;
+                        border: 0;
+                        outline: none;
+                        color: #543f26;
+                        font-size: 4vw;
+                        
+                        @include pc-s{
+                            font-size: 21px;
+                        }
+                        @include pc-l{
+                            font-size: 36px;
+                        }
+                    }
+
+                    &:first-child{
+                        width: 954/1080*100vw;
+                        margin-bottom: 2%;
+                        @include pc-s{
+                            margin-bottom: 0;
+                        }
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            height: 100%;
+                            width: 4%;
+                            left: 28%;   
+                            background: url('../img/bio30th//icon_gps.png')center center no-repeat;
+                            background-size: 100%;
+                            @include pc-s{
+                                width: 7%;
+                                left: 10%; 
+                            }
+                        }
+                    }
+                    span{
+                        position: relative;
+                        top: 22%;
+                        left: 35%;
+                        
+                        @include pc-s{
+                            top: 25%;
+                            left: 25%;
+                        }
+                        
+                    }
+
+                    select{
+                        cursor: pointer;
+                        padding: 0 5%;
+                        appearance:none;
+                        -moz-appearance:none;
+                        -webkit-appearance:none;
+                        background: url('../img/bio30th/icon_arrow.png')right 5% center no-repeat;
+                        background-size: 7%;
+                    }
+                }//li
+            }//ul
+            .tips{
+                position: relative;
+                width: 100%;
+                margin: 3% 0 5%;
+                
+                img{
+                    margin: 0 auto;
+                    width: 672/1080*100vw;
+                    top: 130%;
+                    @include pc-s{
+                        width: 515/1500*100%;
+                    }
+                }
+
+                &.chosed{
+                    cursor: pointer;
+                }
+                
+            }
+    
+            .map{
+                display: none;
+                //box-sizing: border-box;
+                border: 2px solid #e4d2bd;
+                width: 1000/1080*100vw;
+                margin: 0 auto;
+                //height: 1680/1080*100vw;
+                background-color: #fff;
+                font-size: 0;
+                
+                @include pc-s{
+                    width: 100%;
+                    height: 940/1500*$pc-s-inner;
+                }
+                @include pc-l{
+                    height: 940/1500*$pc-l-inner;
+                }
+
+                .google_map_dt{
+                    display: none;
+                    @include pc-s{
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 1020/1500*100%;
+                        height: 100%;
+                    }
+                }
+                .list{
+                    width: 100%;
+                    @include pc-s{
+                        display: inline-block;
+                        border-left: 2px solid #e4d2bd;
+                        width: 480/1500*100%;
+                        height: 100%;
+                        
+                        box-sizing: border-box;
+                    }
+                    .list_title{
+                        width: 100%;
+                        @include pc-s {
+                            height: 88/940*100%;
+                        }
+                    }
+
+                    ul{
+                        width: 100%;
+                        // background: url('../img/bio30th/map_list_title.png')center top no-repeat;
+                        // background-size: 100%;
+                        //padding-top: 104/1080*100vw;
+                        position: relative;
+                        height: 853/940*100%;
+                        overflow-y: scroll;
+                        @include pc-s{
+                            // background: url('../img/bio30th/map_list_title-dt.png')center top no-repeat;
+                            // background-size: 100%;
+                            //padding-top: 87/1500*100%;
+                            
+                            &::-webkit-scrollbar {
+                                width: 17px;
+                                border-left: 2px solid #e4d2bd;
+                            }
+                            
+                            &::-webkit-scrollbar-track {
+                                background-color: #e4d2bd;
+                            }
+                            
+                            &::-webkit-scrollbar-thumb {
+                                background-color: #fff;
+                                border-left: 2px solid #e4d2bd;
+                            }
+                        }
+                        
+
+                        li{
+                            margin-bottom: 2%;
+
+                            input[type=radio]{
+                                display: none;
+                            }
+
+                            input[type=radio] + label{
+                                box-sizing: border-box;
+                                position: relative;
+                                cursor: pointer;
+                                display: block;
+                                padding: 4% 0 0 15%;
+                                height: 240/1080*100vw;
+                                @include pc-s{
+                                    padding: 6% 4% 0 25%;
+                                    height: 210/1500*$pc-s-inner;
+                                }
+                                @include pc-l{
+                                    height: 210/1500*$pc-l-inner;
+                                }
+                                
+                                .name{
+                                    font-size: 4vw;
+                                    line-height: 1.5;
+                                    @include pc-s{
+                                        font-size: 19px;
+                                        line-height: 1.2;
+                                    }
+                                    @include pc-l{
+                                        font-size: 30px;
+                                    }
+                                }
+                                .phone,.address{
+                                    position: relative;
+                                    font-size: 2.5vw;
+                                    margin: 3% 0;
+                                    padding-left: 5%;
+                                    @include pc-s{
+                                        font-size: 12px;
+                                        padding-left: 10%;
+                                        margin: 5% 0;
+                                    }
+                                    @include pc-l{
+                                        font-size: 19px;
+                                        padding-left: 10%;
+                                        margin: 5% 0;
+                                    }
+                                }
+                                .phone::before{
+                                    position: absolute;
+                                    content: "";
+                                    background: url('../img/bio30th/icon_phone.png')center center no-repeat;
+                                    background-size: 100%;
+                                    width: 2.5vw;
+                                    height: 3.5vw;
+                                    left: 1vw;
+                                    top: -0.4vw;
+                                    @include pc-s{
+                                        width: 30/453*100%;
+                                        height: 150%;
+                                        left: 2%;
+                                        top: -15%;
+                                    }
+                                }
+                                .address::before{
+                                    position: absolute;
+                                    content: "";
+                                    background: url('../img/bio30th/icon_location.png')center center no-repeat;
+                                    background-size: 100%;
+                                    width: 2.5vw;
+                                    height: 3.5vw;
+                                    left: 1vw;
+                                    top: -0.4vw;
+                                    @include pc-s{
+                                        width: 30/453*100%;
+                                        height: 150%;
+                                        left: 2%;
+                                        top: -15%;
+                                    }
+                                }
+                            }//label
+                            input[type=radio] +label span{
+                                box-sizing: border-box;
+                                border: 2px solid #e4d2bd;
+                                position: absolute;
+                                left: 7%;
+                                width: 5.5vw;
+                                height: 5.5vw;
+                                @include pc-s {
+                                    width: 56/453*100%;
+                                    height: 56/210*100%;
+                                    top: 15%;
+                                }
+                            }
+
+                            input[type=radio]:checked +label span{
+                                background: url('../img/bio30th/check_b.png')center center no-repeat;
+                                background-size: 100%;
+                            }
+                            .google_map_mb{
+                                border: 2px solid #e4d2bd;
+                                margin: 0 auto;
+                                width: 924/1080*100vw;
+                                height: 435/1080*100vw;
+                                @include pc-s{
+                                    display: none;
+                                }
+                            }
+                        }//li
+                    }//ul
+                }//list
+                
+            }//map
+            .choose_ok{
+                display: none;
+                width: 100%;
+                margin:0 auto 10%;
+                @include pc-s {
+                    cursor: pointer;
+                    width: 515/1500*100%;
+                    margin: 5% auto;
+                }
+            }
+            
+        }//choose
+
+        
+
+        .form{
+            display: none;
+            position: relative;
+            .fill{
+                position: relative;
+
+                ul.shop{
+                    position: absolute;
+                    width: 880/1080*100vw;
+                    height: 195/1080*100vw;
+                    top: 5%;
+                    left: 10%;
+
+                    @include pc-s {
+                        width: 970/1500*100%;
+                        height: 120/530*100%;
+                        top: 10%;
+                        left: 26%;
+                    }
+                    
+                    li{
+                        display: table;
+                        position: relative;
+                        width: 100%;
+
+                        @include pc-s{
+                            height: 50%;
+                        }                        
+                        
+                        span{
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                    }
+                    .name{
+                        font-size: 5vw;
+                        @include pc-s{
+                            font-size: 26px;
+                        }
+                        @include pc-l{
+                            font-size: 43px;
+                        }
+                    }
+                    .info{
+                        padding-top: 4%;
+                        @include pc-s{
+                            padding-top: 1.5%;
+                        }
+                        span{
+                            position: relative;
+                            display: block;
+                            padding: 0 5%;
+                            margin-bottom: 2.5%;
+                            font-size: 3vw;
+                            @include pc-s{
+                                display: inline-block;
+                                padding: 0 4%;
+                                margin-bottom: 5%;
+                                font-size: 21px;
+                            }
+
+                            &.phone::before{
+                                content: "";
+                                position: absolute;
+                                background: url('../img/bio30th/icon_phone.png')center center no-repeat;
+                                background-size: cover;
+                                width: 3vw;
+                                height: 3.5vw;
+                                left: 0;
+                                //top: -0.1vw;
+                                @include pc-s{
+                                    left: 3px;
+                                    top: -1px;
+                                    width: 17px;
+                                    height:20px;
+                                }
+                            }
+                            &.address::before{
+                                content: "";
+                                position: absolute;
+                                background: url('../img/bio30th/icon_location.png')center center no-repeat;
+                                background-size: cover;
+                                width: 3vw;
+                                height: 4.2vw;
+                                left: 0;
+                                top: -0.5vw;
+                                @include pc-s{
+                                    left: 3px;
+                                    top: -1px;
+                                    width: 15px;
+                                    height:20px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul.input{
+                    position: absolute;
+                    width: 850/1080*100vw;
+                    height: 400/1080*100vw;
+                    top: 44%;
+                    left: 10%;
+                    @include pc-s{
+                        width: 760/1500*100%;
+                        height: 265/530*100%;
+                        top: 41%;
+                        left: 40%;
+                    }
+    
+                    li{
+                        font-size: 0;
+                        width: 100%;
+                        height: 80/1080*100vw;
+                        margin-bottom: 10%;
+                        @include pc-s{
+                            height: 76/260*100%;
+                            margin-bottom: 1.7%;
+                            
+                        }
+    
+                        input{
+                            border: 2px solid #e4d2bd;
+                            box-sizing: border-box;
+                            outline: none;
+                            height: 100%;
+                            width: 100%;
+                            line-height: 100%;
+                            font-size: 4vw;
+                            @include pc-s{
+                                font-size: 21px;
+                            }
+                            @include pc-l{
+                                font-size: 36px;
+                            }
+                        }
+                    }//li
+                }//ul
+            }//fill
+
+            .confirm{
+                box-sizing: border-box;
+                width: 100%;
+                position: relative;
+                text-align: center;
+                height: 560/1080*100vw;
+                @include pc-s{
+                    height: 240/1500*$pc-s-inner;
+                }
+                @include pc-l{
+                    height: 240/1500*$pc-l-inner;
+                }
+    
+                ul.check{
+                    position: relative;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 270/1080*100vw;
+                    font-size: 0;
+                    padding: 3% 0 0  13.5%;
+                    @include pc-s{
+                        width: 100%;
+                        height: 80/240*100%;
+                        padding: 10/1500*100% 4.6%;
+                    }
+                    li{
+                        display: block;
+                        text-align: left;
+                        width: 100%;
+                        font-weight: 400;
+                        font-family: 'Noto Sans TC', '微軟正黑體',sans-serif;
+                        font-size: 4vw;
+                        height: 62/1080*100vw;
+                        &:nth-child(2){
+                            color: #f47d92;
+                            margin-top: 3%;
+                        }
+                        @include pc-s{
+                            display: inline-block;
+                            height: 100%;
+                            width: 48%;
+                            font-size: 23px;
+                            &:nth-child(2){
+                                width: 51%;
+                                margin: 0;
+                            }
+                        }
+                        @include pc-l{
+                            font-size: 36px;
+                        }
+    
+                        input[type=checkbox]{
+                            display: none;
+                        }
+                        input[type="checkbox"] + label {
+                            color:#543f26;
+                            display: inline-block;
+                            box-sizing: border-box;
+                            width: 62/1080*100vw;
+                            height: 100%;
+                            line-height: 100%;
+                            margin-right: 1%;
+                            @include pc-s {
+                                width: 60/735*100%;
+                            }
+                        }
+        
+                        input[type="checkbox"] + label span {
+                            display:inline-block;
+                            box-sizing: border-box;
+                            vertical-align:middle;
+                            cursor:pointer;
+                            border:2px solid #e4d2bd;
+                            background-color: #fff;
+                            height: 100%;
+                            width: 100%;
+                        }
+        
+                        input[type="checkbox"]:checked + label span {
+                            background:url('../img/bio30th/check_b.png') center center no-repeat;
+                            background-size: 95%;
+                            background-color: #fff;
+    
+                            &.pink {
+                                background:url('../img/bio30th/check_p.png') center center no-repeat;
+                            background-size: 95%;
+                            background-color: #fff;
+                            }
+                        }
+    
+                        span{
+                            border-bottom: 2px solid #543f26;
+                            cursor: pointer;
+                        }
+                    }//li
+                }//ul
+                .ok,.back{
+                    top: 57%;
+                    width: 893/1080*100vw;
+                    margin: 0 auto 3%;
+                    @include pc-s{
+                        position: absolute;
+                        cursor: pointer;
+                        width: 515/1500*100%;
+                        top: 50%;
+                    }
+                }
+                .ok{
+                    left: 53%;
+                }
+                .back{
+                    left: 12%;
+                }
+            }//confirm
+            .tips{
+                margin-bottom: 5%;
+            }
+        }//form        
+
+        .done{
+            display: none;
+            .info{
+                position: relative;
+                ul{
+                    position: absolute;
+                    width: 615/1080*100vw;
+                    height: 390/1080*100vw;
+                    top: 10%;
+                    left: 34%;
+
+                    @include pc-s{
+                        width: 545/1500*100%;
+                        height: 400/530*100%;
+                        top: 100/530*100%;
+                        left: 685/1500*100%;
+                    }
+                    
+                    li{
+                        vertical-align: middle;
+                        display: table;
+                        width: 100%;
+                        height: 75/1080*100vw;
+                        line-height: 75/1080*100vw;
+                        margin-bottom: 0.8%;
+                        font-size: 3.2vw;
+                        color: #543f26;
+                        span{
+                            display: block;
+                            vertical-align: middle;
+                            line-height: 1.9;
+                        }
+
+                        @include pc-s{
+                            height: 70/530*100%;
+                            line-height: 70/530*100%;
+                            margin-bottom: 7.5%;
+                            font-size: 19px;
+                            span{
+                                line-height: 1.5;
+                            }
+                        }
+                        @include pc-l {
+                            font-size: 30px;
+                        }
+
+                        &:nth-child(4){
+                            margin-bottom: 0;
+                        }
+
+                        &:last-child{
+                            margin: 0;
+                            font-size: 2.7vw;
+                            span{
+                                position: relative;
+                                line-height: 1.5;
+                                padding-left: 7%;
+                                &:before{
+                                    content: "";
+                                    position: absolute;
+                                    background: url('../img/bio30th/icon_location.png')center center no-repeat;
+                                    background-size: 100%;
+                                    width: 2.8vw;
+                                    height: 4vw;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
+                            @include pc-s{
+                                font-size: 15px;
+
+                                span{
+                                    &:before{
+                                        width: 5%;
+                                        height: 110%;
+                                    }
+                                }
+                            }
+                            @include pc-l{
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }//ul
+            }//done info
+            .confirm{
+                position: relative;
+                
+                @include pc-s {
+                    height: 170/1500*$pc-s-inner;
+                }
+                @include pc-l {
+                    height: 170/1500*$pc-l-inner;
+                }
+
+                .submit,.back{
+                    top: 57%;
+                    width: 893/1080*100vw;
+                    margin: 0 auto 3%;
+                    @include pc-s{
+                        position: absolute;
+                        cursor: pointer;
+                        margin: 0 ;
+                        width: 515/1500*100%;
+                        top: 25%;
+                    }
+                }
+                .submit{
+                    left: 53%;
+                }
+                .back{
+                    left: 12%;
+                }
+            }
+            
+        }//done
+    }//inner
+}//trial
+
+
+
+.footer{
+    background-color: #736357;
+    @include pc-s{
+        img{
+            width: $pc-s-inner;
+            margin: 0 auto;
+        }
+    }
+    @include pc-l{
+        img{
+            width: $pc-l-inner;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+@-webkit-keyframes bling {
+    50% {opacity: 0.9;}
+    90% {opacity: 0.5;}
+}
+
+
+@keyframes bling {
+    50% {opacity: 0.9;}
+    90% {opacity: 0.5;}
+}
+
+.bling {
+    opacity: 0.5;
+    -webkit-animation: bling 3s infinite;
+            animation: bling 3s infinite;
+}
+
+
+@-webkit-keyframes breath {
+    50% {opacity: 0.1;}
+    90% {opacity: 1;}
+}
+
+
+@keyframes breath {
+    50% {opacity: 0.1;}
+    90% {opacity: 1;}
+}
+
+
+

@@ -1,0 +1,143 @@
+$pc-s:1081px;
+$pc-m:1450px;
+$pc-l:1920px;
+
+$pc-s-inner:850px;
+$pc-m-inner:1140px;
+$pc-l-inner:1500px;
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+//pc-s
+ @mixin pc-s() {
+  @media all and (min-width: $pc-s) {
+               @content;
+         }
+    }
+//pc-m
+ @mixin pc-m() {
+@media all and (min-width:$pc-m) {
+                @content;
+          }
+}
+//pc-l
+ @mixin pc-l() {
+        @media all and (min-width: $pc-l) {
+                @content;
+          }
+ }
+ 
+ 
+img{
+    display: block;
+    width: 100%;
+}
+
+body{
+    font-family: 'Noto Sans TC', '微軟正黑體',sans-serif !important;    
+}
+
+.inner{
+    position: relative;
+
+    @include pc-s {
+        width: $pc-s-inner;
+        height: 100%;
+        margin: 0 auto;
+    }
+    @include pc-m {
+        width: $pc-m-inner;
+    }
+    @include pc-l {
+        width: $pc-l-inner;
+    }
+}
+
+
+.top{
+    position: relative;
+    width: 100vw;
+    background-color: #acb1bf;
+    overflow-x: hidden;
+    @include pc-s{
+        width: 100%;
+    }
+    .inner{
+        // @include pc-s {
+        //     height: 1520/1500*$pc-s-inner;
+        // }
+        // @include pc-l {
+        //     height: 1520/1500*$pc-l-inner;
+        // }
+        .top_bg{
+            top: 0;
+            width: 100vw;
+
+            @include pc-s {
+                position: relative;                
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2560/1500*$pc-s-inner;
+            }
+            @include pc-m {
+                width: 2560/1500*$pc-m-inner;
+            }
+            @include pc-l {
+                width: 2560/1500*$pc-l-inner;
+            }
+        }
+        .logo{
+            position: absolute;
+            width: 40%;
+            top: -1vw;
+            left: -1vw;
+            @include pc-s{
+                display: none;
+            }
+        }      
+    }// inner
+}//top
+
+.bottom{
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+    .inner{
+        // @include pc-s {
+        //     height: 380/1500*$pc-s-inner;
+        // }
+        // @include pc-l {
+        //     height: 380/1500*$pc-l-inner;
+        // }
+        >img{
+            width: 100%;
+            @include pc-s{
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2560/1500*$pc-s-inner;
+            }
+            @include pc-m {
+                width: 2560/1500*$pc-m-inner;
+            }
+            @include pc-l {
+                width: 2560/1500*$pc-l-inner;
+            }
+        }
+
+        .req_btn{
+            position: absolute;
+            width: 195/1080*100%;
+            bottom: 10%;
+            right: 25%;
+            @include pc-s {
+                cursor: pointer;
+                width: 195/1500*100%;
+                bottom: 15%;
+                right: 18%;
+            }
+        }
+    }
+}
+
+
+
